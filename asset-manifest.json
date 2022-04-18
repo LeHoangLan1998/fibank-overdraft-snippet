@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fibank-overdraft-snippet/static/css/main.542aa5a5.css",
-    "main.js": "/fibank-overdraft-snippet/static/js/main.cb663e6b.js",
+    "main.css": "/fibank-overdraft-snippet/static/css/main.af6f3555.css",
+    "main.js": "/fibank-overdraft-snippet/static/js/main.e5089200.js",
     "static/js/787.37bd0dcf.chunk.js": "/fibank-overdraft-snippet/static/js/787.37bd0dcf.chunk.js",
     "index.html": "/fibank-overdraft-snippet/index.html",
-    "main.542aa5a5.css.map": "/fibank-overdraft-snippet/static/css/main.542aa5a5.css.map",
-    "main.cb663e6b.js.map": "/fibank-overdraft-snippet/static/js/main.cb663e6b.js.map",
+    "main.af6f3555.css.map": "/fibank-overdraft-snippet/static/css/main.af6f3555.css.map",
+    "main.e5089200.js.map": "/fibank-overdraft-snippet/static/js/main.e5089200.js.map",
     "787.37bd0dcf.chunk.js.map": "/fibank-overdraft-snippet/static/js/787.37bd0dcf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.542aa5a5.css",
-    "static/js/main.cb663e6b.js"
+    "static/css/main.af6f3555.css",
+    "static/js/main.e5089200.js"
   ]
 }
