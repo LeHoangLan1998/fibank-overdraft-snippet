@@ -31,10 +31,10 @@ function NameForm() {
     return (
       <form onSubmit = {handleSubmit} className="margin-only">
 
-        <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
-          <div style={{float:"left"}}>
+        <div  className="grid-container">
+          <div className="box-item2">
             <label>
-            Имена(Име, Презиме, Фамилия):
+              Имена(Име, Презиме, Фамилия):
             </label>
             <br/>
 
@@ -43,12 +43,13 @@ function NameForm() {
               name="fullname"
               value = {inputs.fullname || ""}
               onChange = {handleChange}
-              style={{width:"220%"}}
+              style={{width:"550px"}}
             />
-        
+            {validateName(inputs.fullname) ? null : <p className="error">Допустими са само букви на кирилица</p>}
+            {checkEmpty(inputs.fullname) ? <p className="error">Полето е задължително</p> : null}
           </div>
 
-          <div className="relative-position-right" style={{right:"90px"}}>
+          <div>
             <label>
               ЕГН:
             </label>
@@ -62,114 +63,95 @@ function NameForm() {
             />
             {validateEGN(inputs.egn) ? null : <p className="error">Невалидно ЕГН</p>}
             {checkEmpty(inputs.egn) ? <p className="error">Полето е задължително</p> : null}
-        
-
           </div>
-        </div>
 
-        <div>
-          {validateName(inputs.fullname) ? null : <p className="error">Допустими са само букви на кирилица</p>}
-        </div>
-        <div>
-          {checkEmpty(inputs.fullname) ? <p className="error">Полето е задължително</p> : null}
-        </div>
-        
-        <br/>
-
-        <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", marginBottom:"0px", display:"flow-root"}}>
-        <div style={{float:"left"}}>
-          <label>Лична карта №:</label>
-          <br/>
-          <input
-            type="number"
-            name="idNumber"
-            value = {inputs.idNumber || ""}
-            onChange = {handleChange}
-          />
-        </div>
-
-
-        <div className="relative-position-left" style={{left:"5px"}}>
-          <label>Издадена на:</label>
-          <DatePicker 
-            selected={startDate} 
-            onChange={(date) => setStartDate(date)} 
-            onSelect={handleDateSelect}
-            dateFormat="dd/MM/yyyy"
-            locale="bg"
-            showYearDropdown
-          />
-        </div>
-        
-
-        <div className="relative-position-left" style={{right:"88px"}}>
-        <label>Мобилен</label>
-        <br/>
-          <select style={{width:"120%"}}>
-            <option value = {null}>
-              КОД
-            </option>
-            <option>
-              088
-            </option>
-            <option>
-              098
-            </option>
-            <option>
-              089
-            </option>
-            <option>
-              087
-            </option>
-            <option>
-              099
-            </option>
-          </select>
-        </div>
-
-        <div className="relative-position-left" style={{right:"74px"}}>
-        <label>телефон:</label>
-        <br/>
-          <input
-            type="number"
-            name="telNumber"
-            value = {inputs.telNumber || ""}
-            onChange = {handleChange}
-            style={{width:"60%"}}
-          />
-          
-        </div>
-
-
-        <div className="relative-position-right" style={{right:"90px", bottom:"41px"}}>
-        <label>Email:</label>
-        <br/>
-          <input 
-            type="text"
-            name="email"
-            value = {inputs.email || ""}
-            onChange = {handleChange}
-          />
-            {validateEmail(inputs.email) ? null : <p className="error">Невалиден имейл.</p>}
-            {checkEmpty(inputs.email) ? <p className="error">Полето е задължително</p> : null}
-        </div>
-
-        <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
-          <div style={{float:"left", width:"30%"}}>
-          {validateIdNumber(inputs.idNumber) ? null : <p className="error">Прехвърлена максимална дължина</p>}
-          {checkEmpty(inputs.idNumber) ? <p className="error">Полето е задължително</p> : null}
+          <div>
+            <label>Лична карта №:</label>
+            <br/>
+            <input
+              type="number"
+              name="idNumber"
+              value = {inputs.idNumber || ""}
+              onChange = {handleChange}
+              style={{width:"170px"}}
+            />
+            {validateIdNumber(inputs.idNumber) ? null : <p className="error">Прехвърлена максимална дължина</p>}
+            {checkEmpty(inputs.idNumber) ? <p className="error">Полето е задължително</p> : null}
           </div>
-          <div style={{position:"relative", left:"160px"}}>
+
+
+          <div>
+            <label>Издадена на:</label>
+            <DatePicker 
+              selected={startDate} 
+              onChange={(date) => setStartDate(date)} 
+              onSelect={handleDateSelect}
+              dateFormat="dd/MM/yyyy"
+              locale="bg"
+              showYearDropdown
+            />
+          </div>
+        
+
+          <div>
+            <label>Мобилен</label>
+            <br/>
+            <select style={{width:"70px"}}>
+              <option value = {null}>
+                КОД
+              </option>
+              <option>
+                088
+              </option>
+              <option>
+                098
+              </option>
+              <option>
+                089
+              </option>
+              <option>
+                087
+              </option>
+              <option>
+                099
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label>телефон:</label>
+            <br/>
+            <input
+              type="number"
+              name="telNumber"
+              value = {inputs.telNumber || ""}
+              onChange = {handleChange}
+              style={{width:"100px"}}
+            />
             {validateTelNumber(inputs.telNumber) ? null : <p className="error">Невалиден номер</p>}
             {checkEmpty(inputs.telNumber) ? <p className="error">Полето е задължително</p> : null}
           </div>
-        </div>
-        </div>
 
+
+          <div>
+            <label>Email:</label>
+            <br/>
+            <input 
+              type="text"
+              name="email"
+              value = {inputs.email || ""}
+              onChange = {handleChange}
+            />
+            {validateEmail(inputs.email) ? null : <p className="error">Невалиден имейл.</p>}
+            {checkEmpty(inputs.email) ? <p className="error">Полето е задължително</p> : null}
+          </div>
+
+        </div>
       </form>
     )
   }
 
+   //Функции за валидация
   function validateName(name){
     let isValidName = true;
     if (name != null){

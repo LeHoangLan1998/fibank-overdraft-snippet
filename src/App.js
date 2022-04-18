@@ -44,7 +44,7 @@ function App() {
         <br/>
         <BankPacket/>
         <CreditCardOption/>
-        <hr className="rowDivider" style={{margin:"0 0 20px 0"}}/>
+        <hr className="rowDivider" style={{margin:"0 0 20px 0", width:"900px"}}/>
         <div className="margin-only">
           <h4 className="all-caps bold">
             КРЕДИТОИСКАТЕЛ

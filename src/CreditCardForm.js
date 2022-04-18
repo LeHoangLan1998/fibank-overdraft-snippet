@@ -44,114 +44,98 @@ const CreditCardForm = () => {
 
     return ( 
         <form className="margin-only">
-            <div className="margin" style={{paddingLeft:"0px", marginBottom:"0px"}}>
-                <div style={{float:"left", width:"50%"}}>
-            <label>
-                Имена върху картата на латиница:
-            </label>
+            <div className="grid-container2">
+                <div>
+                    <label>
+                        Имена върху картата на латиница:
+                    </label>
+                    
                 </div>
 
-                <div className="relative-position-left" style={{left:"40px"}}>
-            <label>
-                Ключова дума:
-            </label>
-                </div>
-            </div>
-
-            <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
-
-                <div style={{float:"left", width:"28%"}}>
-                <input 
-                type="text" 
-                name="nameLatin" 
-                value={inputs.nameLatin || ""} 
-                onChange={handleChange}
-                />
-                {validateNameLatin(inputs.nameLatin) ? null : <p className="error">Само латински символи са позволени</p>}
+                <div>
+                    <label>
+                        Ключова дума:
+                    </label>
                 </div>
 
-                <div className="relative-position-left">
-                <input 
-                type="text" 
-                name="keyword" 
-                value={inputs.keyword || ""} 
-                onChange={handleChange}
-                style={{width:"60%"}}
-                />
+                <div>
+                    <input 
+                        type="text" 
+                        name="nameLatin" 
+                        value={inputs.nameLatin || ""} 
+                        onChange={handleChange}
+                        style={{width:"220px"}}
+                    />
+                    <br/>
+                    {validateNameLatin(inputs.nameLatin) ? null : <p className="error">Само латински символи са позволени</p>}
+                </div>
+
+                <div>
+                    <input 
+                        type="text" 
+                        name="keyword" 
+                        value={inputs.keyword || ""} 
+                        onChange={handleChange}
+                    />
                 </div>
             </div>
             
-            <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
+            <div className="grid-container3">
 
-                <div style={{float:"left"}}>
+                <div>
                     <label>Бранд:</label>
+                    <br/>
+                    <select onChange = {changeSelectOptionHandler}>
+                        <option value = {null}>
+                            Моля изберете
+                        </option>
+                        <option value="MasterCard">
+                            MasterCard
+                        </option>
+                        <option value="Visa">
+                            Visa
+                        </option>
+                    </select>
                 </div>
 
-                <div className="relative-position-left" style={{left:"120px"}}>
+                <div>
                     <label>Вид:</label>
-                </div>
-
-                <div className="relative-position-left" style={{left:"240px"}}>
-                    <label>Валута:</label>
-                </div>
-
-                <div className="relative-position-left" style={{left:"360px"}}>
-                    <label>Желан лимит:</label>
-                </div>
-            </div>
-            
-            <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
-                <div style={{float:"left"}}>
-                <select onChange = {changeSelectOptionHandler}>
-                    <option value = {null}>
-                        Моля изберете
-                    </option>
-                    <option value="MasterCard">
-                        MasterCard
-                    </option>
-                    <option value="Visa">
-                        Visa
-                    </option>
-                </select>
-                </div>
-            
-
-                <div className="relative-position-left" style={{left:"52px"}}>
-                    <select style={{width:"60%"}}>
+                    <br/>
+                    <select>
                         {options}
                     </select>
                 </div>
-            
 
-                <div className="relative-position-left" style={{left:"18px"}}>
-                <select>
-                    <option value = {null}>
+                <div>
+                    <label>Валута:</label>
+                    <br/>
+                    <select>
+                        <option value = {null}>
                             Моля изберете
-                    </option>
-                    <option>
-                        BGN
-                    </option>
-                    <option>
-                        EURO
-                    </option>
-                    <option>
-                        USD
-                    </option>
-                </select>
+                        </option>
+                        <option>
+                            BGN
+                        </option>
+                        <option>
+                            EURO
+                        </option>
+                        <option>
+                            USD
+                        </option>
+                    </select>
                 </div>
-            
-
-                <div className="relative-position-left" style={{left:"78px"}}>
-                <input 
-                type="number" 
-                name="limit" 
-                value={inputs.limit || ""} 
-                onChange={handleChange}
-                />
+                    
+                <div>
+                    <label>Желан лимит:</label>
+                    <br/>
+                    <input 
+                        type="number" 
+                        name="limit" 
+                        value={inputs.limit || ""} 
+                        onChange={handleChange}
+                    />
                 </div>
-            
-            </div>
-            
+            </div>       
         </form>
     );
 }

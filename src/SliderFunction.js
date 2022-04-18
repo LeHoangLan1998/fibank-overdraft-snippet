@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Slider from 'react-input-slider';
 
 function SliderFunction() {
-    const [state, setState] = useState({ x: 500});
+    const [state, setState] = useState({ x: null});
 
     const handleChange = (event) =>{
         const value = event.target.value;
@@ -28,6 +28,14 @@ function SliderFunction() {
           axis="x"
           x={state.x}
           onChange={({ x }) => setState(state => ({ ...state, x }))}
+          styles={{
+            thumb: {
+            backgroundColor: '#3f51b5'
+            },
+            track: {
+              width: 400
+            }
+          }}
         />
         </div>
 
@@ -46,7 +54,9 @@ function SliderFunction() {
         </div>
 
         <div className = "relative-position-right" style={{left:'60px',bottom:'7px'}}>
-          <button className="btn" type='button' style={{backgroundColor: '#3f51b5', borderColor: '#3f51b5', color: '#fff'}}>ВИДЕО КОНСУЛТАЦИЯ</button>
+          <button className="btn" type='button'>
+            ВИДЕО КОНСУЛТАЦИЯ
+          </button>
         </div>
       </div>
 
