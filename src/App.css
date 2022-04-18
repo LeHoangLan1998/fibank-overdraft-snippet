@@ -1,0 +1,168 @@
+.App {
+  text-align: left;
+  display:block;
+  border-color: #f0f0f0;
+  border-style:solid;
+  width: 900px;
+  border-width: medium;
+  margin: auto;
+
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.error {
+  color: rgb(220, 24, 24);
+}
+
+#slider {
+  padding:21px;
+}
+
+
+
+.logo{
+  background: url(https://my.fibank.bg/EBank/images/logo-bg.png) no-repeat;
+  display: block;
+  width: 270px;
+  height: 56px;
+}
+
+.col-1{
+  float:left;
+}
+
+.col-2{
+  float:right;
+}
+
+.col-3{
+  float:left;
+  position:relative;
+  left:30px;
+  bottom:18px;
+}
+
+.all-caps{
+  text-transform: uppercase;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.margin-first {
+  padding-right:21px;
+  padding-left:21px;
+  margin-top: 5px;
+}
+
+.margin {
+  padding-right:21px;
+  padding-left:21px;
+  margin-top: 10px;
+  margin-bottom:10px;
+  display: inline-block;
+}
+
+.margin-only {
+  padding-right:21px;
+  padding-left:21px;
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+
+.titleHeader{
+  font-size:21px;
+}
+
+.rowDivider{
+  color: #f0f0f0;
+  margin-top: medium;
+}
+
+#receiver{
+  text-align:end;
+  padding:50px;
+}
+
+p{
+  margin: 0px;
+}
+
+button-margin{
+  margin: 10px;
+}
+
+a{
+  cursor: pointer;
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.relative-position-left{
+  position:relative;
+  float:left;
+}
+
+.relative-position-right{
+  position:relative;
+  float:right;
+}
+
+.radio-button-1{
+  position:relative;
+  float:right;
+  right: 530px;
+  bottom:16px;
+}
+
+.radio-button-2{
+  position:relative;
+  float:right;
+  right: 420px;
+  bottom:16px;
+}
+
+.radio-button-3{
+  position:relative;
+  float:right;
+  
+  right: 530px;
+  bottom:38px;
+}
+
+.radio-button-4{
+  position:relative;
+  float:right;
+
+  right: 420px;
+  bottom:38px;
+
+}
+
+.list-no-bullet{
+  list-style:none;
+}
+
+.btn{
+  text-transform: uppercase;
+    border-radius: 2px;
+    margin: 0 6px 0 0;
+    height: 34px;
+    line-height: 18px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 10%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
