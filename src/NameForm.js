@@ -150,20 +150,18 @@ function NameForm() {
             value = {inputs.email || ""}
             onChange = {handleChange}
           />
-        
+            {validateEmail(inputs.email) ? null : <p className="error">Невалиден имейл.</p>}
+            {checkEmpty(inputs.email) ? <p className="error">Полето е задължително</p> : null}
         </div>
+
         <div className="margin-only" style={{paddingLeft:"0px", marginTop:"0px", display:"flow-root"}}>
           <div style={{float:"left", width:"30%"}}>
           {validateIdNumber(inputs.idNumber) ? null : <p className="error">Прехвърлена максимална дължина</p>}
           {checkEmpty(inputs.idNumber) ? <p className="error">Полето е задължително</p> : null}
           </div>
-          <div className="relative-position-left" style={{left:"180px"}}>
+          <div style={{position:"relative", left:"160px"}}>
             {validateTelNumber(inputs.telNumber) ? null : <p className="error">Невалиден номер</p>}
             {checkEmpty(inputs.telNumber) ? <p className="error">Полето е задължително</p> : null}
-          </div>
-          <div className="relative-position-left" style={{left:"255px"}}>
-            {validateEmail(inputs.email) ? null : <p className="error">Невалиден имейл.</p>}
-            {checkEmpty(inputs.email) ? <p className="error">Полето е задължително</p> : null}
           </div>
         </div>
         </div>
@@ -214,7 +212,7 @@ function NameForm() {
 
   function validateEmail(email){
     let isValidEmail = false;
-    if(/[@]/g.test(email) || email==="" || email === null){
+    if(/[@]/g.test(email) || email=="" || email == null){
       isValidEmail= true;
     }
     return isValidEmail;
